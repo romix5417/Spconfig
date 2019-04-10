@@ -1,0 +1,44 @@
+<%- include header %>
+
+    <div id="maincontent">
+        <h2 name="content" style="color: #0f0f0f">系统状态</h2>
+        <div class="cbi-section">
+            <h3 style="color: #0f0f0f">系统</h3>
+            <div class="table" width="100%">
+                <div class="tr">
+                    <div class="td left" width="%33">主机名</div>
+                    <div class="td left">ETWS</div>
+                </div>
+                <div class="tr">
+                    <div class="td left" width="%33">主机架构</div>
+                    <div class="td left">X86_64</div>
+                </div>
+                <div class="tr">
+                    <div class="td left" width="%33">内核版本</div>
+                    <div class="td left">4.9.111</div>
+                </div>
+                <div class="tr">
+                    <div class="td left" width="%33">固件版本</div>
+                    <div class="td left">X86_64</div>
+                </div>
+                <div class="tr">
+                    <div class="td left" width="%33">本地时间</div>
+                    <div class="td left" id="id_curTime"></div>
+                </div>
+                <script>
+                    var curTime="<%=curTime%>";
+                    $("#id_curTime").html(curTime);
+                </script>
+                <div class="tr">
+                    <div class="td left" width="%33">运行时间</div>
+                    <div class="td left">2d 8h 18m 20s</div>
+                </div>
+                <div class="tr">
+                    <div class="td left" width="%33">平均负载</div>
+                    <div class="td left">0.1 0.2 0.3</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<%- include footer %>
