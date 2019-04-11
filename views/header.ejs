@@ -54,7 +54,7 @@
                 <ul class="dropdown-menu" role="menu">
                     <a style="margin-top: 0px; padding-top: 0px"></a>
                     <li><a href="/" class="col-md-offset-1"><i class="fa fa-fw fa-pie-chart"></i>主机状态</a></li>
-                    <li><a href="/topo" class="col-md-offset-1"><i class="fa fa-fw fa-spinner"></i>信处状态</a></li>
+                    <li><a href="/dsp" class="col-md-offset-1"><i class="fa fa-fw fa-spinner"></i>信处状态</a></li>
                     <li><a href="#" class="col-md-offset-1"><i class="fa fa-fw fa-recycle"></i>网络状态</a></li>
                 </ul>
             </li>
@@ -75,7 +75,7 @@
                 </a>
                 <ul class="dropdown-menu" role="menu">
                     <a style="margin-top: 0px; padding-top: 0px"></a>
-                    <li><a href="#" class="col-md-offset-1"><i class="fa fa-fw fa-power-off"></i>参数配置</a></li>
+                    <li><a href="/devconfig" class="col-md-offset-1"><i class="fa fa-fw fa-power-off"></i>参数配置</a></li>
                 </ul>
             </li>
             <li class="dropdown">
@@ -91,12 +91,11 @@
         </ul>
     </nav>
 
-    <button type="button"  class="hamburger is-closed animated fadeInLeft"  data-toggle="offcanvas">
+    <button type="button"  class="hamburger is-closed animated fadeInLeft"  data-toggle="offcanvas" style="background: lightgray">
         <span class="hamb-top"></span>
         <span class="hamb-middle"></span>
         <span class="hamb-bottom"></span>
     </button>
 
-    <div id="page-content-wrapper" style="vertical-align: middle; background: lightgray">
-        <div class="container content-open" style="vertical-align: middle; height:100%;" id="content-cotainer">
-            <div class="col-sm-12">
+    <div id="page-content-wrapper" style="vertical-align: middle; background: #f9f2f4; overflow: auto">
+        <div class="container content-open" style="vertical-align: middle; overflow: hidden" id="content-cotainer">

@@ -1,0 +1,103 @@
+<%- include header %>
+
+    <%- include dsp_header%>
+
+    <div id="dspcontent">
+        <h2 name="dsp_h2_content" style="color: #0f0f0f">主板配置</h2>
+        <div class="cbi-section">
+            <h3 style="color: #0f0f0f">基本配置</h3>
+            <div class="table" width="100%">
+                <div class="tr">
+                    <div class="td left" width="%33">频率</div>
+                    <div class="td left">
+                        <i class="fa fa-user"></i>
+                        <input type="text" placeholder="9.4e9" name="RfFreq" />
+                        <a style="color: darkgray; text-decoration: none"> &nbsp 该参数不要随意改变 </a>
+                    </div>
+                </div>
+                <div class="tr">
+                    <div class="td left" width="%33">距离库</div>
+                    <div class="td left">
+                        <i class="fa fa-user"></i>
+                        <input type="text" placeholder="1500" name="Rangebin" />
+                        <a style="color: darkgray; text-decoration: none"> &nbsp 500 <= Rangebin <= 1500 </a>
+                    </div>
+                </div>
+                <div class="tr">
+                    <div class="td left" width="%33">PRT数</div>
+                    <div class="td left">
+                        <i class="fa fa-user"></i>
+                        <input type="text" placeholder="64" name="PrtNum" />
+                        <a style="color: darkgray; text-decoration: none"> &nbsp Prt: 32 | 64 | 128 | 256 </a>
+                    </div>
+                </div>
+                <div class="tr">
+                    <div class="td left" width="%33">方位数</div>
+                    <div class="td left">
+                        <i class="fa fa-user"></i>
+                        <input type="text" placeholder="240" name="Azimuth" />
+                        <a style="color: darkgray; text-decoration: none"> &nbsp Azimuth: 30 | 60 | 120 | 240 </a>
+                    </div>
+                </div>
+                <div class="apply" style="">
+                    <a href="/devconfig" target="_self"><button>应用</button></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="cbi-section">
+            <h3 style="color: #0f0f0f">计算参数</h3>
+            <div class="table" width="100%">
+                <div class="tr">
+                    <div class="td left" width="%33">强度判决门限</div>
+                    <div class="td left">
+                        <i class="fa fa-user"></i>
+                        <input type="text" placeholder="3.0" name="KSNRZdB" />
+                    </div>
+                </div>
+                <div class="tr">
+                    <div class="td left" width="%33">速度判决门限</div>
+                    <div class="td left">
+                        <i class="fa fa-user"></i>
+                        <input type="text" placeholder="3.0" name="KSNRVdB" />
+                    </div>
+                </div>
+                <div class="tr">
+                    <div class="td left" width="%33">窗函数</div>
+                    <div class="td left">
+                        <i class="fa fa-user"></i>
+                        <input type="text" placeholder="1" name="Windows" />
+                        <a style="color: darkgray; text-decoration: none">&nbsp 1--Rect 2--hanning 3--hamming </a>
+                    </div>
+                </div>
+                <div class="tr">
+                    <div class="td left" width="%33">雷达常数</div>
+                    <div class="td left">
+                        <i class="fa fa-user"></i>
+                        <input type="text" placeholder="1.0" name="RadarConst" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cbi-section">
+            <h3 style="color: #0f0f0f">运行信息</h3>
+            <div class="table" width="100%">
+                <div class="tr">
+                    <div class="td left" width="%33">缓存数据</div>
+                    <div class="td left">ETWS-JK-2019</div>
+                </div>
+                <div class="tr">
+                    <div class="td left" width="%33">计算速度</div>
+                    <div class="td left">v1.0.1</div>
+                </div>
+                <div class="tr">
+                    <div class="td left" width="%33">读取速度</div>
+                    <div class="td left">OK</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+<%- include footer %>

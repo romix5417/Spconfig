@@ -1,0 +1,105 @@
+<%- include header %>
+
+    <%- include dsp_header%>
+
+    <div id="dspcontent">
+        <h2 name="dsp_h2_content" style="color: #0f0f0f">AD板状态信息</h2>
+        <div class="cbi-section">
+            <h3 style="color: #0f0f0f">基本信息</h3>
+            <div class="table" width="100%">
+                <div class="tr">
+                    <div class="td left" width="%33">软件版本</div>
+                    <div class="td left">v1.0.1</div>
+                </div>
+                <div class="tr">
+                    <div class="td left" width="%33">运行状态</div>
+                    <div class="td left">OK</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cbi-section">
+            <h3 style="color: #0f0f0f">硬件信息</h3>
+            <div class="table" width="100%">
+                <div class="tr">
+                    <div class="td left" width="%33">工作电压</div>
+                    <div class="td left">ETWS-JK-2019</div>
+                </div>
+                <div class="tr">
+                    <div class="td left" width="%33">工作电流</div>
+                    <div class="td left">v1.0.1</div>
+                </div>
+                <div class="tr">
+                    <div class="td left" width="%33">工作温度</div>
+                    <div class="td left">OK</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cbi-section">
+            <h3 style="color: #0f0f0f">运行信息</h3>
+            <div class="table" width="100%">
+                <div class="tr">
+                    <div class="td left" width="%33">缓存数据</div>
+                    <div class="td left">ETWS-JK-2019</div>
+                </div>
+                <div class="tr">
+                    <div class="td left" width="%33">计算速度</div>
+                    <div class="td left">v1.0.1</div>
+                </div>
+                <div class="tr">
+                    <div class="td left" width="%33">读取速度</div>
+                    <div class="td left">OK</div>
+                </div>
+            </div>
+        </div>
+
+        <h3 style="color: #0f0f0f">通道信息</h3>
+        <div class="cbi-section">
+            <ul class="cbi-tabmenu">
+                <li class="cbi-tab-disable" id="id-channel0">
+                    <a href="/dsp/adboard/channel0">通道0</a>
+                </li>
+                <li class="cbi-tab-disable" id="id-channel1">
+                    <a href="/dsp/adboard/channel1">通道1</a>
+                </li>
+                <li class="cbi-tab-disable" id="id-channel2">
+                    <a href="/dsp/adboard/channel2">通道2</a>
+                </li>
+                <li class="cbi-tab-disable" id="id-channel3">
+                    <a href="/dsp/adboard/channel3">通道3</a>
+                </li>
+            </ul>
+            <script>
+                var channel = "<%=params.id%>";
+                if(channel == "channel0"){
+                    $("#id-channel0").attr("class", "cbi-tab");
+                }else if(channel == "channel1"){
+                    $("#id-channel1").attr("class", "cbi-tab");
+                }else if(channel == "channel2"){
+                    $("#id-channel2").attr("class", "cbi-tab");
+                }else if(channel == "channel3"){
+                    $("#id-channel3").attr("class", "cbi-tab");
+                }else{
+                    $("#id-channel0").attr("class", "cbi-tab");
+                }
+            </script>
+            <div class="table" width="100%">
+                <div class="tr">
+                    <div class="td left" width="%33">电源</div>
+                    <div class="td left">ETWS-JK-2019</div>
+                </div>
+                <div class="tr">
+                    <div class="td left" width="%33">电压</div>
+                    <div class="td left">v1.0.1</div>
+                </div>
+                <div class="tr">
+                    <div class="td left" width="%33">功耗</div>
+                    <div class="td left">OK</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+<%- include footer %>
