@@ -1,0 +1,29 @@
+<%- include header %>
+
+    <div id="powercontent">
+        <h2 name="power_h2_content" style="color: #0f0f0f">电源控制</h2>
+        <div class="cbi-section">
+            <div class="list-group"  width="100%">
+                <div class="list-group-item list-group-item-action tr">
+                    <label class="td left">主机软件:</label>
+                    <label class="td left"><input class="col-md-50" name="hostsoftpower" type="checkbox" id="hostsoftpower" />勾选表示主机软件启动</label>
+                </div>
+
+                <div class="list-group-item list-group-item-action tr">
+                    <label class="td left">接口板电源:</label>
+                    <label class="td left"><input name="hostsoftpower" type="checkbox" id="hostsoftpower" />勾选接口板电源开启</label>
+                </div>
+                <div class="list-group-item list-group-item-action tr">
+                    <label class="td left">AD板电源:</label>
+                    <label class="td left"><input name="hostsoftpower" type="checkbox" id="hostsoftpower" />勾选表示AD板电源开启</label>
+                </div>
+
+                <br/>
+                <div class="apply" style="text-align: right">
+                    <a href="/devconfig/power" target="_self"><button>应用</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<%- include footer %>

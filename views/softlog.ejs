@@ -1,0 +1,39 @@
+<%- include header %>
+    <div>
+        <h3 style="color: #0f0f0f">故障记录</h3>
+        <div class="cbi-section">
+            <ul class="cbi-tabmenu">
+                <li class="cbi-tab-disable" id="id-softlog">
+                    <a href="/log/softlog">软件log</a>
+                </li>
+                <li class="cbi-tab-disable" id="id-syslog">
+                    <a href="/log/syslog">系统log</a>
+                </li>
+            </ul>
+            <script>
+                var id_log = "<%=params.id%>";
+                if(id_log == "syslog"){
+                    $("#id-syslog").attr("class", "cbi-tab");
+                }else{
+                    $("#id-softlog").attr("class", "cbi-tab");
+                }
+            </script>
+            <div class="table" width="100%">
+                <div class="tr">
+                    <div class="td left" width="%33">电源</div>
+                    <div class="td left">ETWS-JK-2019</div>
+                </div>
+                <div class="tr">
+                    <div class="td left" width="%33">电压</div>
+                    <div class="td left">v1.0.1</div>
+                </div>
+                <div class="tr">
+                    <div class="td left" width="%33">功耗</div>
+                    <div class="td left">OK</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+<%- include footer %>

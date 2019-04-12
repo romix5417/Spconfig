@@ -1,0 +1,68 @@
+<%- include header %>
+
+    <div id="hostcontent">
+        <h2 name="sys_h2_content1" style="color: #0f0f0f">系统配置</h2>
+        <div class="cbi-section">
+            <h3 style="color: #0f0f0f">基本配置</h3>
+            <div class="table" width="100%">
+                <div class="tr">
+                    <div class="td left" width="%33">主机名</div>
+                    <div class="td left">
+                        <i class="fa fa-user"></i>
+                        <input type="text" placeholder="ETWS" name="RfFreq" />
+                        <a style="color: darkgray; text-decoration: none"> &nbsp 主机命名 </a>
+                    </div>
+                </div>
+                <div class="tr">
+                    <div class="td left" width="%33">距离库</div>
+                    <div class="td left">
+                        <i class="fa fa-user"></i>
+                        <input type="text" placeholder="1500" name="Rangebin" />
+                        <a style="color: darkgray; text-decoration: none"> &nbsp 500 <= Rangebin <= 1500 </a>
+                    </div>
+                </div>
+                <div class="tr">
+                    <div class="td left" width="%33">PRT数</div>
+                    <div class="td left">
+                        <i class="fa fa-user"></i>
+                        <input type="text" placeholder="64" name="PrtNum" />
+                        <a style="color: darkgray; text-decoration: none"> &nbsp Prt: 32 | 64 | 128 | 256 </a>
+                    </div>
+                </div>
+                <div class="tr">
+                    <div class="td left" width="%33">方位数</div>
+                    <div class="td left">
+                        <i class="fa fa-user"></i>
+                        <input type="text" placeholder="240" name="Azimuth" />
+                        <a style="color: darkgray; text-decoration: none"> &nbsp Azimuth: 30 | 60 | 120 | 240 </a>
+                    </div>
+                </div>
+                <br/>
+                <div class="apply" style="text-align: right">
+                    <a href="/devconfig" target="_self"><button>保存</button></a>
+                    <a href="/devconfig" target="_self"><button>应用</button></a>
+                </div>
+            </div>
+        </div>
+
+        <h2 name="sys_h2_content2" style="color: #0f0f0f">电源控制</h2>
+        <div class="cbi-section">
+            <h3 style="color: #0f0f0f">系统重启</h3>
+            <div class="table" width="100%">
+                <br/>
+                <div class="apply" style="text-align: right">
+                    <a href="/devconfig" target="_self"><button>系统重启</button></a>
+                </div>
+            </div>
+
+            <h3 style="color: #0f0f0f">设备关机</h3>
+            <div class="table" width="100%">
+                <br/>
+                <div class="apply" style="text-align: right">
+                    <a href="/devconfig" target="_self"><button>设备关机</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<%- include footer %>

@@ -1,0 +1,39 @@
+<%- include header %>
+
+    <div id="upgradecontent">
+        <h2 name="dsp_h2_content" style="color: #0f0f0f">固件更新</h2>
+        <div class="cbi-section">
+            <h3 style="color: #0f0f0f">主板固件</h3>
+            <form id="upload-form" action="/devconfig/upgrade/upload" method="post" enctype="multipart/form-data" >
+                <input type="file" id="upload" name="upload"/><br/>
+                <div class="apply" style="text-align: right">
+                    <input type="submit" value="上传"/>
+                    <a href="/upgrade" target="_self"><button>更新</button></a>
+                </div>
+            </form>
+        </div>
+
+        <div class="cbi-section">
+            <h3 style="color: #0f0f0f">接口板固件</h3>
+            <form id="upload-form" action="/devconfig/upgrade/upload" method="post" enctype="multipart/form-data" >
+                <input type="file" id="upload" name="upload"/><br/>
+                <div class="apply" style="text-align: right">
+                    <input type="submit" value="上传"/>
+                    <a href="/upgrade" target="_self"><button>更新</button></a>
+                </div>
+            </form>
+        </div>
+
+        <div class="cbi-section">
+            <h3 style="color: #0f0f0f">AD板固件</h3>
+            <form id="upload-form" action="/devconfig/upgrade/upload" method="post" enctype="multipart/form-data" >
+                <input type="file" id="upload" name="upload"/><br/>
+                <div class="apply" style="text-align: right">
+                    <input type="submit" value="上传"/>
+                    <a href="/upgrade" target="_self"><button>更新</button></a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+<%- include footer %>

@@ -8,6 +8,8 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var dspRouter = require('./routes/dsp');
 var devconfRouter = require('./routes/devconfig');
+var hostconfRouter = require('./routes/hostconfig');
+var logRouter = require('./routes/log');
 
 var app = express();
 
@@ -25,6 +27,8 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/dsp', dspRouter);
 app.use('/devconfig', devconfRouter);
+app.use('/hostconfig', hostconfRouter);
+app.use('/log', logRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
