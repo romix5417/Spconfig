@@ -7,31 +7,28 @@
             <div class="table" width="100%">
                 <div class="tr">
                     <div class="td left" width="%33">主机名</div>
-                    <div class="td left">ETWS</div>
+                    <div class="td left" id="id_hostname"></div>
                 </div>
                 <div class="tr">
                     <div class="td left" width="%33">主机架构</div>
-                    <div class="td left">X86_64</div>
+                    <div class="td left" id="id_mainboard_cpu_arch"></div>
                 </div>
                 <div class="tr">
                     <div class="td left" width="%33">内核版本</div>
-                    <div class="td left">4.9.111</div>
+                    <div class="td left" id="id_mainboard_system_kernel"></div>
                 </div>
                 <div class="tr">
                     <div class="td left" width="%33">固件版本</div>
-                    <div class="td left">v1.0.1</div>
+                    <div class="td left" id="id_firmware"></div>
                 </div>
                 <div class="tr">
                     <div class="td left" width="%33">本地时间</div>
                     <div class="td left" id="id_curTime"></div>
                 </div>
-                <script>
-                    var curTime="<%=curTime%>";
-                    $("#id_curTime").html(curTime);
-                </script>
+
                 <div class="tr">
                     <div class="td left" width="%33">运行时间</div>
-                    <div class="td left">2d 8h 18m 20s</div>
+                    <div class="td left" id="id_mainboard_system_uptime"></div>
                 </div>
                 <div class="tr">
                     <div class="td left" width="%33">平均负载</div>
@@ -44,9 +41,15 @@
             <h3 style="color: #0f0f0f">CPU</h3>
             <div class="table" width="100%">
                 <div class="tr">
+                    <div class="td left" width="%33">版本</div>
+                    <div class="td left" id="id_mainboard_cpu_info"></div>
+                </div>
+
+                <div class="tr">
                     <div class="td left" width="%33">线程数</div>
                     <div class="td left">ETWS</div>
                 </div>
+
                 <div class="tr">
                     <div class="td left" width="%33">使用率</div>
                     <div class="td left">X86_64</div>
@@ -58,16 +61,16 @@
             <h3 style="color: #0f0f0f">内存</h3>
             <div class="table" width="100%">
                 <div class="tr">
-                    <div class="td left" width="%33">可用</div>
-                    <div class="td left">ETWS</div>
+                    <div class="td left" width="%33">总共</div>
+                    <div class="td left" id="id_total"></div>
+                </div>
+                <div class="tr">
+                    <div class="td left" width="%33">已用</div>
+                    <div class="td left" id="id_used"></div>
                 </div>
                 <div class="tr">
                     <div class="td left" width="%33">空闲</div>
-                    <div class="td left">X86_64</div>
-                </div>
-                <div class="tr">
-                    <div class="td left" width="%33">缓存</div>
-                    <div class="td left">4.9.111</div>
+                    <div class="td left" id="id_free"></div>
                 </div>
             </div>
         </div>
@@ -89,6 +92,22 @@
                 </div>
             </div>
         </div>
+
+        <script>
+
+            var curTime="<%=curTime%>";
+            var data = <%-JSON.stringify(data)%>;
+
+            $("#id_curTime").html(curTime);
+
+            $("#id_hostname").html(data.hostname);
+            $("#id_firmware").html(data.firmware);
+            $("#id_mainboard_cpu_arch").html(data.mainboard_cpu_arch);
+            $("#id_mainboard_cpu_info").html(data.mainboard_cpu_info);
+            $("#id_mainboard_system_kernel").html(data.mainboard_system_kernel);
+            $("#id_mainboard_system_uptime").html(data.mainboard_system_uptime);
+
+        </script>
 
     </div>
 
