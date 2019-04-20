@@ -18,7 +18,8 @@ router.get('/', function(req, res, next) {
         "mainboard_system_uptime":"",
         "mainboard_memory_total":"",
         "mainboard_memory_used":"",
-        "mainboard_memory_free":""
+        "mainboard_memory_free":"",
+        "mainboard_memory_cache":""
     };
 
     const client = net.createConnection({path:'/tmp/server.sock'}, () => {
@@ -42,6 +43,7 @@ router.get('/', function(req, res, next) {
         req.data.mainboard_memory_total = data.mainboard.memory.total;
         req.data.mainboard_memory_used = data.mainboard.memory.used;
         req.data.mainboard_memory_free = data.mainboard.memory.free;
+        req.data.mainboard_memory_cache = data.mainboard.memory.cache;
 
         console.log(req.data.mainboard_cpu_arch);
 

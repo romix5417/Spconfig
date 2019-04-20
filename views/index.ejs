@@ -62,16 +62,53 @@
             <div class="table" width="100%">
                 <div class="tr">
                     <div class="td left" width="%33">总共</div>
-                    <div class="td left" id="id_total"></div>
+                    <div class="td left" id="id_mem_total">
+                        <div style="width:100%; max-width:200px; position:relative; border:1px solid #999999">
+                            <div style="background-color:dodgerblue; width:100%; height:15px">
+                                <div style="position:absolute; left:0; top:0; text-align:center; width:100%; color:#000000">
+                                    <small id="id_mainboard_memory_total"></small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="tr">
                     <div class="td left" width="%33">已用</div>
-                    <div class="td left" id="id_used"></div>
+                    <div class="td left">
+                        <div style="width:100%; max-width:200px; position:relative; border:1px solid #999999">
+                            <div id="id_mem_used" style="background-color:red; width:10%; height:15px">
+                                <div style="position:absolute; left:0; top:0; text-align:center; width:100%; color:#000000">
+                                    <small id="id_mainboard_memory_used"></small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="tr">
                     <div class="td left" width="%33">空闲</div>
-                    <div class="td left" id="id_free"></div>
+                    <div class="td left">
+                        <div style="width:100%; max-width:200px; position:relative; border:1px solid #999999">
+                            <div id="id_mem_free" style="background-color:limegreen; width:90%; height:15px">
+                                <div style="position:absolute; left:0; top:0; text-align:center; width:100%; color:#000000">
+                                    <small id="id_mainboard_memory_free"></small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                <div class="tr">
+                    <div class="td left" width="%33">缓存</div>
+                    <div class="td left">
+                        <div style="width:100%; max-width:200px; position:relative; border:1px solid #999999">
+                            <div id="id_mem_cache" style="background-color:yellow; width:90%; height:15px">
+                                <div style="position:absolute; left:0; top:0; text-align:center; width:100%; color:#000000">
+                                    <small id="id_mainboard_memory_cache"></small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
 
@@ -97,6 +134,7 @@
 
             var curTime="<%=curTime%>";
             var data = <%-JSON.stringify(data)%>;
+            var percent = 0;
 
             $("#id_curTime").html(curTime);
 
@@ -106,6 +144,22 @@
             $("#id_mainboard_cpu_info").html(data.mainboard_cpu_info);
             $("#id_mainboard_system_kernel").html(data.mainboard_system_kernel);
             $("#id_mainboard_system_uptime").html(data.mainboard_system_uptime);
+            $("#id_mainboard_memory_total").html(data.mainboard_memory_total);
+            $("#id_mainboard_memory_used").html(data.mainboard_memory_used);
+            $("#id_mainboard_memory_free").html(data.mainboard_memory_free);
+            $("#id_mainboard_memory_cache").html(data.mainboard_memory_cache);
+
+            percent = data.mainboard_memory_used/data.mainboard_memory_total;
+            var width=percent*100+"%";
+            $("#id_mem_used").width(width);
+
+            percent = data.mainboard_memory_free/data.mainboard_memory_total;
+            width=percent*100+"%";
+            $("#id_mem_free").width(width);
+
+            percent = data.mainboard_memory_cache/data.mainboard_memory_total;
+            width=percent*100+"%";
+            $("#id_mem_cache").width(width);
 
         </script>
 
