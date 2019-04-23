@@ -4,20 +4,21 @@
     <meta charset="UTF-8">
     <title><%= title %></title>
     <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/bootstrap-switch.css">
     <link rel="stylesheet" type="text/css" href="/fonts/font-awesome/css/font-awesome.css">
     <link rel="stylesheet" href="/stylesheets/style.css">
 
     <script src="/javascripts/jquery.min.js"></script>
     <script src="/javascripts/bootstrap.min.js"></script>
+    <script src="/javascripts/bootstrap-switch.js"></script>
     <script src="/javascripts/bootstrap.js"></script>
     <script src="/javascripts/echarts.min.js"></script>
     <script src="/javascripts/echarts.js"></script>
     <script src="/javascripts/jtopo.min.js"></script>
     <script src="/javascripts/toolbar.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gojs/2.0.3/go-debug.js"></script>
 </head>
-<body>
 
+<body>
     <nav class="navbar navbar-inverse" style="border-radius: 0px; position: fixed; width: 100%; z-index: 9999" role="navigation">
         <div class="container">
             <div class="container-fluid">
@@ -31,6 +32,12 @@
                     <li><a href="/reg" style="text-decoration: none;"><span class="glyphicon glyphicon-user"></span> 注册</a></li>
                     <li><a href="/login_bk" style="text-decoration: none;"><span class="glyphicon glyphicon-log-in"></span> 登录</a></li>
                     <li><a href="/logout" style="text-decoration: none;"><span class="glyphicon glyphicon-log-out"></span> 退出</a></li>
+                    <li><a style="text-decoration: none;">自动刷新</a></li>
+                    <li>
+                        <div id="id_refresh_switch" style="margin-top: 8px">
+                            <input type="checkbox" class="make-switch" checked data-on-color="success" data-off-color="warning" data-size="small">
+                        </div>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -64,7 +71,7 @@
                 </a>
                 <ul class="dropdown-menu" role="menu">
                     <a style="margin-top: 0px; padding-top: 0px"></a>
-                    <li><a href="/hostconfig" class="col-md-offset-1"><i class="fa fa-fw fa-power-off"></i>电源控制</a></li>
+                    <li><a href="/hostconfig" class="col-md-offset-1"><i class="fa fa-fw fa-power-off"></i>系统电源</a></li>
                     <li><a href="#" class="col-md-offset-1"><i class="fa fa-fw fa-internet-explorer"></i>系统配置</a></li>
                     <li><a href="#" class="col-md-offset-1"><i class="fa fa-fw fa-terminal"></i>远程登录</a></li>
                 </ul>

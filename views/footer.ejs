@@ -50,6 +50,54 @@
             $(function () {
                 $(".dropdown-toggle").dropdown();
             });
+
+            /*$('#id_refresh_switch').bootstrapSwitch({
+                onText: "on",
+                offText: "off",
+                onColor: "success",
+                offColor: "info",
+                size: "mini",
+                onSwitchChange: function(event, state) {
+                    if (state == true) {
+                        $(this).val("1");
+                    } else {
+                        $(this).val("0");
+                        alert(state);
+                    }
+                }
+            });
+
+            function changeState(stateValue){
+                if(stateValue==1){
+                    $('#id_refresh_switch').bootstrapSwitch('setState', true, true);
+                }else{
+                    $('#id_refresh_switch').bootstrapSwitch('setState', false, true);
+                }
+            }*/
+
+            $('#id_refresh_switch input').bootstrapSwitch();
+
+            $('#id_refresh_switch input').bootstrapSwitch('state',false);
+
+            $('#oper-btn-sw').click(function(){
+                $('#id_refresh_switch input').bootstrapSwitch('toggleState');
+            });
+
+            var id;
+
+            $('#id_refresh_switch input').on('switchChange.bootstrapSwitch',function(event,state){
+
+                console.log(event);
+                console.log(state);
+
+                if(state){
+                    id = window.setInterval (function () {
+                        window.location.reload();
+                    },3000);
+                }else{
+                    clearInterval(id);
+                }
+            });
         });
 
     </script>

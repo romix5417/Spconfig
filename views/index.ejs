@@ -30,10 +30,7 @@
                     <div class="td left" width="%33">运行时间</div>
                     <div class="td left" id="id_mainboard_system_uptime"></div>
                 </div>
-                <div class="tr">
-                    <div class="td left" width="%33">平均负载</div>
-                    <div class="td left">0.1 0.2 0.3</div>
-                </div>
+
             </div>
         </div>
 
@@ -47,12 +44,12 @@
 
                 <div class="tr">
                     <div class="td left" width="%33">线程数</div>
-                    <div class="td left">ETWS</div>
+                    <div class="td left" id="id_mainboard_cpu_threadx"></div>
                 </div>
 
                 <div class="tr">
-                    <div class="td left" width="%33">使用率</div>
-                    <div class="td left">X86_64</div>
+                    <div class="td left" width="%33">平均负载</div>
+                    <div class="td left" id="id_average_load"></div>
                 </div>
             </div>
         </div>
@@ -142,12 +139,17 @@
             $("#id_firmware").html(data.firmware);
             $("#id_mainboard_cpu_arch").html(data.mainboard_cpu_arch);
             $("#id_mainboard_cpu_info").html(data.mainboard_cpu_info);
+            $("#id_mainboard_cpu_threadx").html(data.mainboard_cpu_threadx);
             $("#id_mainboard_system_kernel").html(data.mainboard_system_kernel);
             $("#id_mainboard_system_uptime").html(data.mainboard_system_uptime);
-            $("#id_mainboard_memory_total").html(data.mainboard_memory_total);
-            $("#id_mainboard_memory_used").html(data.mainboard_memory_used);
-            $("#id_mainboard_memory_free").html(data.mainboard_memory_free);
-            $("#id_mainboard_memory_cache").html(data.mainboard_memory_cache);
+            $("#id_mainboard_memory_total").html(data.mainboard_memory_total + 'k');
+            $("#id_mainboard_memory_used").html(data.mainboard_memory_used + 'k');
+            $("#id_mainboard_memory_free").html(data.mainboard_memory_free + 'k');
+            $("#id_mainboard_memory_cache").html(data.mainboard_memory_cache + 'k');
+
+            $("#id_average_load").html(data.average_load);
+
+            console.log("ave_load:" + data.average_load);
 
             percent = data.mainboard_memory_used/data.mainboard_memory_total;
             var width=percent*100+"%";
@@ -160,6 +162,7 @@
             percent = data.mainboard_memory_cache/data.mainboard_memory_total;
             width=percent*100+"%";
             $("#id_mem_cache").width(width);
+
 
         </script>
 
