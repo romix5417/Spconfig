@@ -31,7 +31,7 @@ function get_radargsp_info(req, res, next) {
         req.data.radargsp_radar_rffreq = data.radar.rffreq;
         req.data.radargsp_radar_rangebin = data.radar.rangebin;
         req.data.radargsp_radar_prtnum = data.radar.prtnum;
-        req.data.radargsp_radar_rchanel = data.radar.rchanel;
+        req.data.radargsp_radar_rchannel = data.radar.rchannel;
         req.data.radargsp_radar_azimuth = data.radar.azimuth;
         req.data.radargsp_count_ksnrzdb = data.count.ksnrzdb;
         req.data.radargsp_count_ksnrvdb = data.count.ksnrvdb;
@@ -114,6 +114,59 @@ router.post('/upgrade/upload', function(req, res, next) {
     res.render('upgrade', req);
 });
 
+router.get('/basesetpost', function (req, res, next) {
+    get_radargsp_info(req, res, next);
+});
+
+router.post('/basesetpost', function (req, res, next) {
+
+    var path = [
+        ".radargsp.radar.rffreq",
+        ".radargsp.radar.rangebin",
+        ".radargsp.radar.prtnum",
+        ".radargsp.radar.rchannel",
+        ".radargsp.radar.azimuth"
+    ];
+
+    var postdata = [];
+    console.log(req.body.rangbin);
+    postdata[0] = req.body.rffreq;
+    postdata[1] = req.body.rangebin;
+    postdata[2] = req.body.prtnum;
+    postdata[3] = req.body.rchannel;
+    postdata[4] = req.body.azimuth;
+
+    post_radargsp_info(req, res, path, postdata);
+    get_radargsp_info(req, res, next);
+});
+
+router.get('/countpost', function (req, res, next) {
+    get_radargsp_info(req, res, next);
+});
+
+router.post('/countpost', function (req, res, next) {
+
+    var path = [
+        ".radargsp.count.cache",
+        ".radargsp.count.threadpool",
+        ".radargsp.count.clutter_filter"
+    ];
+
+    var postdata = [];
+    console.log(req.body.cache);
+    postdata[0] = req.body.ksnrzdb;
+    postdata[1] = req.body.ksnrvdb;
+    postdata[2] = req.body.windows;
+    postdata[3] = req.body.radarconst;
+
+    post_radargsp_info(req, res, path, postdata);
+    get_radargsp_info(req, res, next);
+});
+
+router.get('/runningpost', function (req, res, next) {
+    get_radargsp_info(req, res, next);
+});
+
 router.post('/runningpost', function (req, res, next) {
 
     var path = [
@@ -131,5 +184,7 @@ router.post('/runningpost', function (req, res, next) {
     post_radargsp_info(req, res, path, postdata);
     get_radargsp_info(req, res, next);
 });
+
+
 
 module.exports = router;

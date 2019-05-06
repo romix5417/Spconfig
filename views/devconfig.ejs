@@ -7,96 +7,100 @@
         <div class="cbi-section">
             <h3 style="color: #0f0f0f">基本配置</h3>
             <div class="table" width="100%">
-                <div class="tr">
-                    <div class="td left" width="%33">频率</div>
-                    <div class="td left">
-                        <i class="fa fa-cog"></i>
-                        <input type="text" placeholder="" name="RfFreq" id="id_baseset_radar_rffreq"/>
-                        <a style="color: darkgray; text-decoration: none"> &nbsp 该参数不要随意改变 </a>
+                <form action="/devconfig/basesetpost" method="post" role="form" name="baseset_form" onsubmit="return baseset_check()">
+                    <div class="tr">
+                        <div class="td left" width="%33">频率</div>
+                        <div class="td left">
+                            <i class="fa fa-cog"></i>
+                            <input type="text" placeholder="" name="rffreq" id="id_baseset_radar_rffreq"/>
+                            <a style="color: darkgray; text-decoration: none"> &nbsp 该参数不要随意改变 </a>
+                        </div>
                     </div>
-                </div>
-                <div class="tr">
-                    <div class="td left" width="%33">距离库</div>
-                    <div class="td left">
-                        <i class="fa fa-cog"></i>
-                        <input type="text" placeholder="" name="Rangebin" id="id_baseset_radar_rangebin"/>
-                        <a style="color: darkgray; text-decoration: none"> &nbsp 500 <= Rangebin <= 1500 </a>
+                    <div class="tr">
+                        <div class="td left" width="%33">距离库</div>
+                        <div class="td left">
+                            <i class="fa fa-cog"></i>
+                            <input type="text" placeholder="" name="rangebin" id="id_baseset_radar_rangebin"/>
+                            <a style="color: darkgray; text-decoration: none"> &nbsp 500 <= Rangebin <= 1500 </a>
+                        </div>
                     </div>
-                </div>
-                <div class="tr">
-                    <div class="td left" width="%33">PRT数</div>
-                    <div class="td left">
-                        <i class="fa fa-cog"></i>
-                        <input type="text" placeholder="" name="PrtNum" id="id_baseset_radar_prtnum"/>
-                        <a style="color: darkgray; text-decoration: none"> &nbsp Prt: 32 | 64 | 128 | 256 </a>
+                    <div class="tr">
+                        <div class="td left" width="%33">PRT数</div>
+                        <div class="td left">
+                            <i class="fa fa-cog"></i>
+                            <input type="text" placeholder="" name="prtnum" id="id_baseset_radar_prtnum"/>
+                            <a style="color: darkgray; text-decoration: none"> &nbsp Prt: 32 | 64 | 128 | 256 </a>
+                        </div>
                     </div>
-                </div>
-                <div class="tr">
-                    <div class="td left" width="%33">接收通道</div>
-                    <div class="td left">
-                        <i class="fa fa-cog"></i>
-                        <input type="text" placeholder="" name="RChanel" id="id_baseset_radar_rchannel"/>
-                        <a style="color: darkgray; text-decoration: none"> &nbsp Recv Channel: 8 | 16 | 64 | 128 </a>
+                    <div class="tr">
+                        <div class="td left" width="%33">接收通道</div>
+                        <div class="td left">
+                            <i class="fa fa-cog"></i>
+                            <input type="text" placeholder="" name="rchannel" id="id_baseset_radar_rchannel"/>
+                            <a style="color: darkgray; text-decoration: none"> &nbsp Recv Channel: 16 | 32 | 64 | 128 </a>
+                        </div>
                     </div>
-                </div>
-                <div class="tr">
-                    <div class="td left" width="%33">方位数</div>
-                    <div class="td left">
-                        <i class="fa fa-cog"></i>
-                        <input type="text" placeholder="" name="Azimuth" id="id_baseset_radar_azimuth"/>
-                        <a style="color: darkgray; text-decoration: none"> &nbsp Azimuth: 30 | 60 | 120 | 240 </a>
+                    <div class="tr">
+                        <div class="td left" width="%33">方位数</div>
+                        <div class="td left">
+                            <i class="fa fa-cog"></i>
+                            <input type="text" placeholder="" name="azimuth" id="id_baseset_radar_azimuth"/>
+                            <a style="color: darkgray; text-decoration: none"> &nbsp Azimuth: 30 | 60 | 120 | 240 </a>
+                        </div>
                     </div>
-                </div>
-                <br/>
-                <div class="apply" style="text-align: right">
-                    <a href="/devconfig" target="_self" id="id_mainboard_baseset_applay"><button>应用</button></a>
-                </div>
+                    <br/>
+                    <div class="apply" style="text-align: right">
+                        <a href="/devconfig" target="_self" id="id_mainboard_baseset_applay"><button>应用</button></a>
+                    </div>
+                </form>
             </div>
         </div>
 
         <div class="cbi-section">
             <h3 style="color: #0f0f0f">计算参数</h3>
             <div class="table" width="100%">
-                <div class="tr">
-                    <div class="td left" width="%33">强度判决门限</div>
-                    <div class="td left">
-                        <i class="fa fa-cog"></i>
-                        <input type="text" placeholder="3.0" id="id_countarg_ksnrzdb" name="KSNRZdB" />
+                <form action="/devconfig/countpost" method="post" role="form" name="count_form" onsubmit="return count_check()">
+                    <div class="tr">
+                        <div class="td left" width="%33">强度判决门限</div>
+                        <div class="td left">
+                            <i class="fa fa-cog"></i>
+                            <input type="text" placeholder="3.0" id="id_countarg_ksnrzdb" name="ksnrzdb" />
+                        </div>
                     </div>
-                </div>
-                <div class="tr">
-                    <div class="td left" width="%33">速度判决门限</div>
-                    <div class="td left">
-                        <i class="fa fa-cog"></i>
-                        <input type="text" placeholder="3.0" id="id_countarg_ksnrvdb" name="KSNRVdB" />
+                    <div class="tr">
+                        <div class="td left" width="%33">速度判决门限</div>
+                        <div class="td left">
+                            <i class="fa fa-cog"></i>
+                            <input type="text" placeholder="3.0" id="id_countarg_ksnrvdb" name="ksnrvdb" />
+                        </div>
                     </div>
-                </div>
-                <div class="tr">
-                    <div class="td left" width="%33">窗函数</div>
-                    <div class="td left">
-                        <i class="fa fa-cog"></i>
-                        <input type="text" placeholder="1" id="id_countarg_windows" name="Windows" />
-                        <a style="color: darkgray; text-decoration: none">&nbsp 1--Rect 2--hanning 3--hamming </a>
+                    <div class="tr">
+                        <div class="td left" width="%33">窗函数</div>
+                        <div class="td left">
+                            <i class="fa fa-cog"></i>
+                            <input type="text" placeholder="1" id="id_countarg_windows" name="windows" />
+                            <a style="color: darkgray; text-decoration: none">&nbsp 1--Rect 2--hanning 3--hamming </a>
+                        </div>
                     </div>
-                </div>
-                <div class="tr">
-                    <div class="td left" width="%33">雷达常数</div>
-                    <div class="td left">
-                        <i class="fa fa-cog"></i>
-                        <input type="text" placeholder="1.0" id="id_countarg_radarconst" name="RadarConst" />
+                    <div class="tr">
+                        <div class="td left" width="%33">雷达常数</div>
+                        <div class="td left">
+                            <i class="fa fa-cog"></i>
+                            <input type="text" placeholder="1.0" id="id_countarg_radarconst" name="radarconst" />
+                        </div>
                     </div>
-                </div>
-                <br/>
-                <div class="apply" style="text-align: right">
-                    <a href="/devconfig" target="_self" id="id_mainboard_countarg_applay"><button>应用</button></a>
-                </div>
+                    <br/>
+                    <div class="apply" style="text-align: right">
+                        <a href="/devconfig" target="_self" id="id_mainboard_countarg_applay"><button>应用</button></a>
+                    </div>
+                </form>
             </div>
         </div>
 
         <div class="cbi-section">
             <h3 style="color: #0f0f0f">运行参数</h3>
             <div class="table" width="100%">
-                <form action="/devconfig/runningpost" method="post" role="form" name="running_form" onsubmit="running_check()">
+                <form action="/devconfig/runningpost" method="post" role="form" name="running_form" onsubmit="return running_check()">
                     <div class="tr">
                         <div class="td left" width="%33">缓存</div>
                         <div class="td left">
@@ -129,13 +133,12 @@
     </div>
 
     <script>
-
         var data = <%-JSON.stringify(data)%>;
 
         $('#id_baseset_radar_rffreq').attr('placeholder', data.radargsp_radar_rffreq);
         $('#id_baseset_radar_rangebin').attr('placeholder', data.radargsp_radar_rangebin);
         $('#id_baseset_radar_prtnum').attr('placeholder', data.radargsp_radar_prtnum);
-        $('#id_baseset_radar_rchannel').attr('placeholder', data.radargsp_radar_rchanel);
+        $('#id_baseset_radar_rchannel').attr('placeholder', data.radargsp_radar_rchannel);
         $('#id_baseset_radar_azimuth').attr('placeholder', data.radargsp_radar_azimuth);
 
         $('#id_countarg_ksnrzdb').attr('placeholder', data.radargsp_count_ksnrzdb);
@@ -157,10 +160,109 @@
 
         });
 
-        function running_check() {
-            console.log('hello running check');
+        function baseset_check() {
+            console.log('baseset check.');
+            if (document.baseset_form.rffreq.value == "") {
+                console.log('baseset check rffreq value is null.');
+                document.baseset_form.rffreq.value = data.radargsp_radar_rffreq;
+            }
+
+            if (document.baseset_form.rangebin.value == "") {
+                console.log('baseset check rangebin value is null.');
+                document.baseset_form.rangebin.value = data.radargsp_radar_rangebin;
+            } else if (Number.isInteger( Number(baseset_form.rangebin.value) ) ) {
+                if (Number(baseset_form.rangebin.value) < 500 || Number(document.baseset_form.rangebin.value) > 1500) {
+                    alert("输入参数无效,距离库参数必须是整数！");
+                    return false;
+                }
+            } else {
+                alert("输入参数无效,距离库参数必须是整数！");
+                return false;
+            }
+
+            if (document.baseset_form.prtnum.value == "") {
+                console.log('baseset check prtnum value is null.');
+                document.baseset_form.prtnum.value = data.radargsp_radar_prtnum;
+            } else if (Number.isInteger( Number(baseset_form.prtnum.value) ) ) {
+                if (Number(baseset_form.prtnum.value) < 32 || Number(document.baseset_form.prtnum.value) > 128) {
+                    alert("输入的PRT参数无效,PRT参数必须是大于32且小于128的整数！");
+                    return false;
+                }
+            } else {
+                alert("输入的PRT参数无效,PRT参数必须是大于32且小于128的整数！");
+                return false;
+            }
+
+            if (document.baseset_form.rchannel.value == "") {
+                console.log('baseset check rchannel value is null.');
+                document.baseset_form.rchannel.value = data.radargsp_radar_rchannel;
+            } else if (Number.isInteger( Number(baseset_form.rchannel.value) ) ) {
+                if (Number(baseset_form.rchannel.value) == 16 || Number(document.baseset_form.rchannel.value) == 32 || Number(document.baseset_form.rchannel.value) == 64 || Number(document.baseset_form.rchannel.value) == 128) {
+                    ;
+                } else {
+                    alert("输入的接收通道参数无效,接收通道参数必须是16,32,64,128!");
+                    return false;
+                }
+            } else {
+                alert("输入的接收通道参数无效,接收通道参数必须是16,32,64,128!");
+                return false;
+            }
+
+            if (document.baseset_form.azimuth.value == "") {
+                console.log('baseset check azimuth value is null.');
+                document.baseset_form.azimuth.value = data.radargsp_radar_azimuth;
+            } else if (Number.isInteger( Number(baseset_form.azimuth.value) ) ) {
+                if (Number(baseset_form.azimuth.value) < 4 || Number(document.baseset_form.azimuth.value) > 360) {
+                    alert("输入的方位参数无效,方位参数必须是大于4且小于360的整数!");
+                    return false;
+                }
+            } else {
+                alert("输入的方位参数无效,方位参数必须是大于4且小于360的整数!");
+                return false;
+            }
         }
 
+        function count_check() {
+            console.log('count check.');
+
+            if (document.count_form.ksnrzdb.value == "") {
+                console.log('count check rffreq value is null.');
+                document.count_form.ksnrzdb.value = data.radargsp_count_ksnrzdb;
+            }
+
+            if (document.count_form.ksnrvdb.value == "") {
+                console.log('count check rangebin value is null.');
+                document.count_form.ksnrvdb.value = data.radargsp_count_ksnrvdb;
+            }
+
+            if (document.count_form.windows.value == "") {
+                console.log('baseset check value is null.');
+                document.count_form.windows.value = data.radargsp_count_windows;
+            }
+
+            if (document.baseset_form.radarconst.value == "") {
+                console.log('baseset check radarconst value is null.');
+                document.count_form.radarconst.value = data.radargsp_count_radarconst;
+            }
+        }
+
+        function running_check() {
+            console.log('hello running check');
+            if (document.running_form.cache.value == "") {
+                console.log('count check cache value is null.');
+                document.running_form.cache.value = data.radargsp_running_cache;
+            }
+
+            if (document.running_form.threadpool.value == "") {
+                console.log('count check threadpool value is null.');
+                document.running_form.threadpool.value = data.radargsp_running_threadpool;
+            }
+
+            if (document.running_form.clutter_filter.value == "") {
+                console.log('baseset check value is null.');
+                document.running_form.clutter_filter.value = data.radargsp_running_clutter_filter;
+            }
+        }
     </script>
 
 <%- include footer %>
